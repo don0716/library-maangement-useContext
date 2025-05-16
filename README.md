@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Library Management App - useContext
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based book library app built using useContext, routing, filtering, and persistent storage using localStorage.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+##  Product Requirements Document (PRD) Checklist
 
-### `npm start`
+###  Global State
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [x] `useContext` used to create a `BookContext`.
+- [x] Global state includes: `books`, `setBooks`, `toggleStatus`, `deleteBooks`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+###  Add Books
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Form allows input for:
+  - [x] Title
+  - [x] Author
+  - [x] Status (Read/Unread)
+- [x] Book is added to global state with a unique `id`.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+###  View Books
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] All books displayed in Books page.
+- [x] Each book displays:
+  - [x] Title
+  - [x] Author
+  - [x] Status (Read/Unread)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+###  Mark as Read/Unread
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [x] Toggle button provided on each book card.
+- [x] Button updates `isRead` property in global state.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+###  Delete Books
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [x] Delete button available for each book.
+- [x] Book is removed from the global state.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+###  Filter Books
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [x] Three filter buttons implemented:
+  - [x] All Books (with count)
+  - [x] Read Books (with count)
+  - [x] Unread Books (with count)
+- [x] Filter logic updates displayed list accordingly.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+###  Navigation
 
-### Analyzing the Bundle Size
+- [x] React Router used for routing.
+- [x] Two main routes:
+  - [x] `/books` → All Books Page
+  - [x] `/add-book` → Add Book Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+###  Data Persistence (localStorage)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [x] Books are saved to `localStorage` on any change.
+- [x] Books are loaded from `localStorage` on initial load.
+- [x] App maintains state even after refresh or browser close.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+##  Tech Stack
 
-### Deployment
+- React
+- React Router
+- useContext + useState
+- Bootstrap (for styling)
+- localStorage API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
